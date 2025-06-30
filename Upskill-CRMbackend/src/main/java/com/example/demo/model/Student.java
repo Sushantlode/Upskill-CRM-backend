@@ -3,9 +3,8 @@ package com.example.demo.model;
 import jakarta.persistence.*;
 import lombok.*;
 import java.time.LocalDate;
-import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name = "students")
@@ -68,7 +67,7 @@ public class Student {
     private LocalDate dob;
 
 	@ManyToOne
-	@JsonBackReference
+	@JsonManagedReference
 @JoinColumn(name = "batch_name", referencedColumnName = "batch_name")
 private Batch batch;
 

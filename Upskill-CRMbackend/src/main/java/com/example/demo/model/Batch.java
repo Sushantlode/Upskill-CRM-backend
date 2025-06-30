@@ -7,6 +7,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "batches")
@@ -30,7 +31,7 @@ public class Batch {
 
     // One batch can have many students
     @OneToMany(mappedBy = "batch", cascade = CascadeType.ALL)
-    @JsonBackReference
+   @JsonBackReference
     private List<Student> students;
 
 

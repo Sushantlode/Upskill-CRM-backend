@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/batches")
-@CrossOrigin("*") // optional for frontend access
+@CrossOrigin(" http://localhost:5176/") // optional for frontend access
 public class BatchController {
 
     @Autowired
